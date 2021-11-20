@@ -1,4 +1,7 @@
 
 instal: docker pull mysql
 run:  docker run --rm --name Testmysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123 -d mysql
-
+connect mysql insind : sudo docker exec -it Testmysql mysql -u root -p
+stop container: docker stop mysql-server
+start container: docker start Testmysql
+restart container: docker restart mysql-server
