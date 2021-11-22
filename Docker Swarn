@@ -1,0 +1,17 @@
+- create app.js
+- npm init -y
+- npm i express
+- test with "node app.js"
+
+# Create Image
+- create image with ""
+- docker build -t cmnode:1.0 .
+
+# Create Docker Container (Standalone)
+- docker run -d -p 40:40 --name nodeswarm cmnode:1.0
+- curl http://localhost:40
+
+
+# Create Docker Swarm as Cluster
+- docker swarm init
+- docker service create --replicas 3 --name cmswarm --publish 40:40 cmnode:1.0
