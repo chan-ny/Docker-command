@@ -1,0 +1,15 @@
+# check network on docker
+ - docker network ls
+
+# docker run with pull ajsurath/apache-php
+  - docker run --name myweb --network="bridge" -d ajsurath/apache-php
+
+# check ip address of container 
+  - docker inspect --format='{{.NetworkSettings.IPAddress}}' <Name container>
+
+# check port in container 
+  - docker inspect --format='{{.NetworkSettings.Ports}}' <Name container>
+  
+# using host for network truth
+  - docker run --name myweb3 --net=host -d ajsurath/apache-php
+
