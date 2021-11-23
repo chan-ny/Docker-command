@@ -1,0 +1,4 @@
+
+
+# make fiel image in container to image docker 
+ - docker commit <Name Container> <Create Name>
