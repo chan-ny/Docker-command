@@ -5,7 +5,7 @@ FROM node:12.8.1-alpine AS build
 WORKDIR /app
 COPY package.json ./
 RUN npm install
-COPY ..
+COPY . .
 RUN npm run build
 
 #step 3 do to install ngninx 
@@ -15,7 +15,7 @@ EXPOSE 80
 CMD ["nginx","-g","daemon off;"]
 
 #step 4 pull on docker
- $ docker build -t <folder file save Dockerfile>
+ $ docker build -t vue_docker:1.0 .
 
 #step 5 run file imegs
  $ docker run -p 8080:80 -it --name <Make Name Container> <Images Name>
